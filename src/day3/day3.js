@@ -5,31 +5,36 @@ var moves = '^^<<v<<v><v^^<><>^^<v<v^>>^^^><^>v^>v><><><<vv^^<^>^^<v^>v>v^v>>>^<
 var x = 0
 var y = 0
 
+var rx = 0
+var ry = 0
+
 var visited = []
-visited.push([x, y, 1])
+visited.push([x, y, 2])
 
 for (var i = 0, length = moves.length; i < length; i++) {
   switch (moves[i]) {
     case '^':
-      y++
+      i % 2 ? ry++ : y++
       break
     case '>':
-      x++
+      i % 2 ? rx++ : x++
       break
     case 'v':
-      y--
+      i % 2 ? ry-- : y--
       break
     case '<':
-      x--
+      i % 2 ? rx-- : x--
       break
     default:
       break
   }
-  var a = contains(x, y, visited)
+
+  var a
+  i % 2 ? a = contains(rx, ry, visited) : a = contains(x, y, visited)
   if (a !== -1) {
     visited[a][2]++
   } else {
-    visited.push([x, y, 1])
+    i % 2 ? visited.push([rx, ry, 1]) : visited.push([x, y, 1])
   }
 }
 
