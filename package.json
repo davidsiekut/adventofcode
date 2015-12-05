@@ -1,0 +1,22 @@
+{
+  "name": "adventofcode",
+  "version": "1.0.0",
+  "description": "http://adventofcode.com/about",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://davidsiekut@github.com/davidsiekut/adventofcode.git"
+  },
+  "author": "David Siekut",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davidsiekut/adventofcode/issues"
+  },
+  "homepage": "https://github.com/davidsiekut/adventofcode#readme",
+  "dependencies": {
+    "md5": "^2.0.0"
+  }
+}
