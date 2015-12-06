@@ -7,13 +7,10 @@ var rl = require('readline').createInterface({
 let nice = 0
 
 rl.on('line', function (line) {
-  if (line.match(/.*ab|cd|pq|xy.*/)) {
+  if (!line.match(/(..).*\1/)) {
     return
   }
-  if (!line.match(/.*[aieou].*[aieou].*[aeiou].*/)) {
-    return
-  }
-  if (!line.match(/(.)\1/)) {
+  if (!line.match(/(.).\1/)) {
     return
   }
   nice++
