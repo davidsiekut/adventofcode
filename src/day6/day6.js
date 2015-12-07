@@ -11,7 +11,7 @@ let arr = new Array(xmax)
 for (var x = 0; x < xmax; x++) {
   arr[x] = new Array(ymax)
   for (let y = 0; y < ymax; y++) {
-    arr[x][y] = false
+    arr[x][y] = 0
   }
 }
 
@@ -49,22 +49,21 @@ rl.on('line', function (line) {
 rl.on('close', function () {
   rl.close()
 
-  let on = 0
-  let off = 0
+  let brightness = 0
 
   for (let x = 0; x < xmax; x++) {
     for (let y = 0; y < ymax; y++) {
-      arr[x][y] ? on++ : off++
+      brightness += arr[x][y]
     }
   }
 
-  console.log(on)
+  console.log(brightness)
 })
 
 function turnon (x1, y1, x2, y2) {
   for (let x = x1; x <= x2; x++) {
     for (let y = y1; y <= y2; y++) {
-      arr[x][y] = true
+      arr[x][y]++
     }
   }
 }
@@ -72,7 +71,7 @@ function turnon (x1, y1, x2, y2) {
 function turnoff (x1, y1, x2, y2) {
   for (let x = x1; x <= x2; x++) {
     for (let y = y1; y <= y2; y++) {
-      arr[x][y] = false
+      if (arr[x][y] > 0) arr[x][y]--
     }
   }
 }
@@ -80,7 +79,7 @@ function turnoff (x1, y1, x2, y2) {
 function toggle (x1, y1, x2, y2) {
   for (let x = x1; x <= x2; x++) {
     for (let y = y1; y <= y2; y++) {
-      arr[x][y] = !arr[x][y]
+      arr[x][y] += 2
     }
   }
 }
