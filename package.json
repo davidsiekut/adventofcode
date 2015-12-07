@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/davidsiekut/adventofcode#readme",
   "dependencies": {
-    "md5": "^2.0.0"
+    "md5": "^2.0.0",
+    "underscore": "^1.8.3"
   }
 }

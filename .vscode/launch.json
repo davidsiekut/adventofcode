@@ -5,7 +5,7 @@
       "name": "Launch",
       "type": "node",
       "request": "launch",
-      "program": "src/day6/day6.js",
+      "program": "src/day7/day7.js",
       "stopOnEntry": false,
       "args": [],
       "cwd": ".",
