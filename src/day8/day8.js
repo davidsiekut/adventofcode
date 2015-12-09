@@ -6,9 +6,11 @@ let rl = require('readline').createInterface({
 
 let total = 0
 let memory = 0
+let encoded = 0
 
 rl.on('line', function (line) {
   total += line.length
+  encoded += 4
 
   for (let i = 1; i < line.length - 1; i++) {
     let c = line[i]
@@ -16,9 +18,11 @@ rl.on('line', function (line) {
       let d = line[i + 1]
       if (d === 'x') {
         memory++
+        encoded++
         i += 3
         continue
       }
+      encoded += 2
       memory++
       i++
       continue
@@ -29,5 +33,5 @@ rl.on('line', function (line) {
 
 rl.on('close', function () {
   rl.close()
-  console.log(total - memory)
+  console.log(encoded)
 })
