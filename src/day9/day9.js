@@ -28,7 +28,7 @@ rl.on('close', function () {
   rl.close()
 
   var p = permutate(places)
-  let min = 69420
+  let max = 0
 
   for (let i = 0; i < p.length; i++) {
     let dist = 0
@@ -37,12 +37,12 @@ rl.on('close', function () {
       dist += lookups[p[i][j] + p[i][j + 1]]
     }
 
-    if (dist < min) {
-      min = dist
+    if (dist > max) {
+      max = dist
     }
   }
 
-  console.log(min)
+  console.log(max)
 })
 
 function permutate (list) {
