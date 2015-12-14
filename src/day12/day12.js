@@ -21,6 +21,11 @@ function unwrap (d) {
   if (typeof (d) === 'object') {
     let s = 0
     for (var i in d) {
+      if (!(d instanceof Array)) {
+        if (d[i] === 'red') {
+          return 0
+        }
+      }
       s += unwrap(d[i])
     }
     return s
