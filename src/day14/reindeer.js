@@ -10,6 +10,8 @@ function Reindeer (n, sp, st, r) {
   this.cstamina = st
   this.crecovery = 0
   this.resting = false
+
+  this.points = 0
 }
 
 reindeer.update = function () {

@@ -20,9 +20,22 @@ while (t <= tmax) {
   for (let i = 0; i < sleigh.length; i++) {
     sleigh[i].update()
   }
+
+  let first = sleigh[0].position
+  for (let i = 1; i < sleigh.length; i++) {
+    if (sleigh[i].position > first) {
+      first = sleigh[i].position
+    }
+  }
+  for (let i = 0; i < sleigh.length; i++) {
+    if (sleigh[i].position === first) {
+      sleigh[i].points++
+    }
+  }
+
   t++
 }
 
 for (let i = 0; i < sleigh.length; i++) {
-  console.log(sleigh[i].position)
+  console.log(sleigh[i].points)
 }
